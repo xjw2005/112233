@@ -10,4 +10,9 @@ public class Apple extends Fruit {
         System.out.println("apple rotten time is 4 days.");
     }
 
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+
 }

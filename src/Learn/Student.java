@@ -5,7 +5,7 @@ public class Student {
     public int age;
     public int score;
     private int id;
-
+    private Cat cat;
 
     public Student(String name, int id){
         this.name = name;
@@ -40,6 +40,10 @@ public class Student {
         return id == ((Student)obj).id;
     }
 
-
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        Student student = new Student(this.name, this.id);
+        student.cat = (Cat)this.cat.clone();
+    }
 }
 
