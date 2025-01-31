@@ -1,7 +1,7 @@
 package Learn;
 import Learn.Animal;
 
-public class Cat extends Animal{
+public class Cat extends Animal implements IRun,IEat{
     public String colour;
 
 
@@ -13,4 +13,13 @@ public class Cat extends Animal{
         System.out.println("喵喵喵");
     }
 
+    @Override
+    public void run() {
+        System.out.println("Cat is running 10 killometers per step.");
+    }
+
+    @Override
+    public void eat() {
+        System.out.println("Cat is running 10 killometers per step.");
+    }
 }
