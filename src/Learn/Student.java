@@ -6,18 +6,23 @@ public class Student {
     public int score;
     private int id;
 
-//    public Student(){
-//
-//    }
-//
 
     public Student(String name, int id){
         this.name = name;
         this.id = id;
     }
 
+    private class TrafficTool{
+        private String toolName;
+        private TrafficTool(String toolName){
+            this.toolName = toolName;
+        }
+    }
+
     public void goToClass(){
-        System.out.println(this.name + " go to class");
+        TrafficTool tool = new TrafficTool("bus");
+        System.out.println(this.name + " go to class by "+ tool.toolName);
+
     }
 
     @Override
@@ -34,5 +39,7 @@ public class Student {
     public boolean equals(Object obj) {
         return id == ((Student)obj).id;
     }
+
+
 }
 
