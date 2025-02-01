@@ -1,34 +1,28 @@
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
+import Learn.Cat;
+import Learn.Dog;
+import Learn.IRun;
+import Learn.Manager;
+
+import java.util.HashMap;
 
 
 public class Main {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
-//
-//        System.out.println(arrayInt2[0]);
-//        arrayInt[0] = 999;
-//        System.out.println(arrayInt2[0]);
-//
-//        try {
-//            Integer i = Integer.valueOf("abc");
-//        }catch (NumberFormatException e){
-//            e.printStackTrace();
-//        }
-//
-//
-        List<Integer> list = new LinkedList<Integer>();
+        final String ANIMAL_SELECTED_FIRST = "myFirstAnimal";
+        final String ANIMAL_SELECTED_SECOND = "mySecondAnimal";
+        final String OPERATOR_NAME = "大明";
 
-        list.add(1);
-        list.add(1);
+        Manager<String, IRun> manager = new Manager<>(new HashMap<String, IRun>());
+        Cat myCat = new Cat("xiaoXiong");
+        Dog myDog = new Dog("pePerPe");
 
-        Collections.sort(list);
+        manager.set(ANIMAL_SELECTED_FIRST, myCat);
+        manager.set(ANIMAL_SELECTED_SECOND, myDog);
 
-        for (Integer integer : list) {
-            System.out.println(integer);
-        }
+        manager.run(ANIMAL_SELECTED_FIRST);
+        manager.run(ANIMAL_SELECTED_SECOND);
 
     }
 }

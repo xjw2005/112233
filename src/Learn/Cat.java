@@ -3,8 +3,6 @@ import Learn.Animal;
 
 public class Cat extends Animal implements IRun,IEat{
     public String colour;
-
-
     public Cat(String name) {
         super(name);
     }
@@ -21,5 +19,10 @@ public class Cat extends Animal implements IRun,IEat{
     @Override
     public void eat() {
         System.out.println("Cat is running 10 killometers per step.");
+    }
+
+    @Override
+    public String toString() {
+        return this.getName();
     }
 }
