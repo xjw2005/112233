@@ -23,6 +23,18 @@ public class Main {
 
         manager.run(ANIMAL_SELECTED_FIRST);
         manager.run(ANIMAL_SELECTED_SECOND);
+        //迭代器的使用测试：
+
+//        for (String key : manager.keySet()) {
+//            System.out.println(key);
+//        }
+
+
+        IRun testAnimal = manager.get(ANIMAL_SELECTED_FIRST);
+        IRun testAnimal2 = manager.get(ANIMAL_SELECTED_SECOND);
+
+        System.out.println(testAnimal);
+        System.out.println(testAnimal2);
 
     }
 }

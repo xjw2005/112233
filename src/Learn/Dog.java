@@ -14,4 +14,11 @@ public class Dog extends Animal implements IRun,IEat {
     public void run() {
         System.out.println("Dog is running");
     }
+
+    @Override
+    public String toString() {
+        return this.getName();
+    }
 }
+
+

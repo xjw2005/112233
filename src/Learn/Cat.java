@@ -6,6 +6,7 @@ public class Cat extends Animal implements IRun,IEat{
     public Cat(String name) {
         super(name);
     }
+
     @Override
     public void scream() {
         System.out.println("喵喵喵");
@@ -25,4 +26,6 @@ public class Cat extends Animal implements IRun,IEat{
     public String toString() {
         return this.getName();
     }
+
+
 }

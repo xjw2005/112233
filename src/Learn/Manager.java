@@ -1,6 +1,8 @@
 package Learn;
 
+import java.util.Collection;
 import java.util.Map;
+import java.util.Set;
 
 public class Manager<T, E extends IRun> {
     private Map<T, E> map;
@@ -23,4 +25,14 @@ public class Manager<T, E extends IRun> {
             e.run();
         }
     }
+
+    public Set<T> keySet() {
+        return map.keySet();
+    }
+
+    public Collection<E> values(){
+        return map.values();
+    }
+
+
 }
