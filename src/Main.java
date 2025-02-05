@@ -7,50 +7,32 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Scanner;
 
 
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        String fileName = "C:\\Users\\12909\\Desktop\\desktopFolder\\testBufferedWriter.txt";
+        Scanner scanner = new Scanner(System.in);
 
+        //Scanner 测试：
 
-//        try {
-//            FileWriter writerMan = new FileWriter(fileName, false);
-//            writerMan.write("This is a test.");
-//            System.out.println("Successfully wrote to the file.");
-//            writerMan.close();
-//        }
-//        catch (IOException e){
-//            System.out.println("Problem writing " + fileName);
-//        }
+//        System.out.println("请输入数据：");
+//        String str = scanner.next();
+//        System.out.println("输入的数据为：" + str);
 
-        //BufferedWriter测试
-//        try {
-//            BufferedWriter bufferWriter = new BufferedWriter(new FileWriter(fileName, false));
-//            bufferWriter.write("This is the second test. ho~wa!!!");
-//            bufferWriter.newLine();
-//            bufferWriter.write("Today is a lovely day again!");
-//            bufferWriter.close();
-//            System.out.println("Successfully wrote to the file.");
-//        }
-//        catch (IOException e){
-//            System.out.println("Problem writing " + fileName);
-//        }
-
-        //测试BufferedReader
-
-        try {
-            BufferedReader bufferReader = new BufferedReader(new FileReader(fileName));
-            String line = bufferReader.readLine();
-
-            while (line != null){
-                System.out.println(line);
-                line = bufferReader.readLine();
+        //测试输入小数。
+        while (true) {
+            System.out.println("请输入小数。");
+            if (scanner.hasNextFloat()) {
+                System.out.println("输入的为：" + scanner.nextFloat());
+            } else {
+                System.out.println("输入的不是小数。");
+                return;
             }
+
         }
-        catch (IOException e){
-            System.out.println("Problem reading " + fileName);
-        }
+
+
     }
 }
