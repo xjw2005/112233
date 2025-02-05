@@ -4,53 +4,32 @@ import Learn.IRun;
 import Learn.Manager;
 
 import java.io.*;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Scanner;
 
 
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        String fileName = "C:\\Users\\12909\\Desktop\\desktopFolder\\testBufferedWriter.txt";
+        Scanner scanner = new Scanner(System.in);
 
+        System.out.println("请输入日期（格式：yyyy-MM-dd）：");
+        String inputDate = scanner.nextLine();
 
-//        try {
-//            FileWriter writerMan = new FileWriter(fileName, false);
-//            writerMan.write("This is a test.");
-//            System.out.println("Successfully wrote to the file.");
-//            writerMan.close();
-//        }
-//        catch (IOException e){
-//            System.out.println("Problem writing " + fileName);
-//        }
-
-        //BufferedWriter测试
-//        try {
-//            BufferedWriter bufferWriter = new BufferedWriter(new FileWriter(fileName, false));
-//            bufferWriter.write("This is the second test. ho~wa!!!");
-//            bufferWriter.newLine();
-//            bufferWriter.write("Today is a lovely day again!");
-//            bufferWriter.close();
-//            System.out.println("Successfully wrote to the file.");
-//        }
-//        catch (IOException e){
-//            System.out.println("Problem writing " + fileName);
-//        }
-
-        //测试BufferedReader
-
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        DateTimeFormatter outPutFormatter = DateTimeFormatter.ofPattern("yyyy年MM月dd日");
         try {
-            BufferedReader bufferReader = new BufferedReader(new FileReader(fileName));
-            String line = bufferReader.readLine();
+            LocalDate date = LocalDate.parse(inputDate, formatter);
+            String formattedDate = date.format(outPutFormatter);
+            System.out.println("解析成功的日期是：" + formattedDate);
+        } catch (DateTimeParseException e) {
+            System.out.println("输入的日期格式不正确，请检查输入。");
+        }
 
-            while (line != null){
-                System.out.println(line);
-                line = bufferReader.readLine();
-            }
-        }
-        catch (IOException e){
-            System.out.println("Problem reading " + fileName);
-        }
     }
 }
