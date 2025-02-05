@@ -8,12 +8,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        Scanner scanner = new Scanner(System.in);
-        scanner.useDelimiter("\n");
-        //Scanner 测试：
-        String myWords = scanner.next();
-        System.out.println(myWords);
-
+        //序列化和反序列化
 
     }
 }
