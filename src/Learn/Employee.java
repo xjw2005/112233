@@ -15,5 +15,13 @@ public class Employee implements Serializable {
         return employeeName;
     }
 
+    //加薪水
+    public void raiseSalary(double byPercent) {
+        double raise = employeeSalary * byPercent / 100;
+        employeeSalary += raise;
+    }
 
+    public String toString() {
+        return getClass().getName() +"Employee[name=" + employeeName + ",salary=" + employeeSalary + "]";
+    }
 }
